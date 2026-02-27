@@ -49,12 +49,12 @@ const App = () => {
       heroTitle:
         'Membangun <span class="text-indigo-600">Solusi Digital</span> yang Andal.',
       heroDesc:
-        "Software Engineer / Web Developer berpengalaman membangun backend & web application dengan fokus pada kualitas, performa, dan maintainability.",
+        "Software Engineer / Full Stack Developer berpengalaman membangun backend maupun frontend & web application dengan fokus pada kualitas, performa, dan maintainability.",
       btnProject: "Lihat Proyek",
       btnContact: "Hubungi Saya",
       aboutTitle: "Tentang Saya",
       aboutP1:
-        "Saya adalah Software Engineer dengan passion di bidang teknologi dan pemecahan masalah. Menguasai pengembangan backend dan web application dengan pengalaman menggunakan Ruby on Rails, PHP (Laravel/CodeIgniter), serta berbagai tool pengembangan.",
+        "Saya adalah Software Engineer dengan passion di bidang teknologi dan pemecahan masalah. Menguasai pengembangan backend dan web application dengan pengalaman menggunakan Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, dan Angular), & MobileApps (React Native & Flutter) serta berbagai tool pengembangan.",
       aboutP2:
         "Berpengalaman bekerja dalam tim Agile, membangun API, maintenance sistem, dan mengimplementasikan solusi optimisasi sesuai kebutuhan bisnis.",
       expTitle: "Pengalaman Kerja",
@@ -62,6 +62,7 @@ const App = () => {
       certSub: "Lisensi / sertifikasi (jika ada) akan ditampilkan di sini.",
       skillsTitle: "Keahlian Teknis",
       projectTitle: "Proyek Unggulan",
+      educationTitle: "Pendidikan",
       projectSub: "Contoh proyek yang pernah saya bangun atau kontribusikan.",
       contactTitle: "Siap untuk memulai proyek selanjutnya?",
       contactSub:
@@ -75,16 +76,16 @@ const App = () => {
       // Pengalaman berdasarkan resume
       expData: [
         {
-          role: "Web Application Developer",
+          role: "Fullstack Developer",
           company: "PT. Innoark Servis Internasional",
           period: "September 2022 - Sekarang",
-          desc: "Bekerja pada requirement berbasis proyek; memberikan solusi teknis; terlibat pada desain algoritma optimisasi; menerapkan best practice teknis; menulis kode bersih dan testable (Ruby on Rails); berpartisipasi dalam siklus Agile.",
+          desc: "Bekerja pada requirement berbasis proyek, memberikan solusi teknis, terlibat pada desain algoritma optimisasi, menerapkan best practice teknis, menulis kode bersih dan testable (Ruby on Rails). Maintenance Aplikasi dan database. Membuat report menggunakan C# & Pentaho. Berpartisipasi dalam siklus Agile.",
         },
         {
-          role: "Software Engineer / Backend Developer",
+          role: "Software Engineer / Fullstack Developer",
           company: "PT. Sarana Bisnis Bersama (BeezzGroup)",
           period: "Juli 2021 - Agustus 2022",
-          desc: "Membangun API service untuk aplikasi mobile BeezzGroup menggunakan Ruby on Rails; maintenance backoffice; manajemen database; deployment dan pemeliharaan server (Digital Ocean); version control di GitLab.",
+          desc: "Membangun API service untuk aplikasi mobile BeezzGroup menggunakan Ruby on Rails dan juga maintenance dan melakukan beberapa enhancement di aplikasi mobile menggunakan tech tools React Native. Maintenance backoffice application (Web admin Marketplace yang dibangun), manajemen database (PostgreSQL dan MongoDB (NoSQL)) deployment dan pemeliharaan server (Digital Ocean), version control di GitLab.",
         },
         {
           role: "Backend Developer",
@@ -201,12 +202,12 @@ const App = () => {
       heroTitle:
         'Building Reliable <span class="text-indigo-600">Digital Solutions</span>.',
       heroDesc:
-        "Software Engineer / Web Developer experienced in backend and web applications focused on quality, performance, and maintainability.",
+        "Software Engineer / Full Stack Developer experienced in building backend and frontend & web applications with a focus on quality, performance, and maintainability.",
       btnProject: "View Projects",
       btnContact: "Contact Me",
       aboutTitle: "About Me",
       aboutP1:
-        "I am a Software Engineer passionate about technology and problem solving. Experienced in backend development and web applications using Ruby on Rails and PHP frameworks.",
+        "I am a Software Engineer with a passion for technology and problem-solving. I have expertise in backend and web application development, with experience using Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, and Angular), and mobile apps (React Native & Flutter), as well as various development tools.",
       aboutP2:
         "Experienced working in Agile teams, building APIs, maintaining systems, and implementing optimization solutions based on business needs.",
       expTitle: "Work Experience",
@@ -214,6 +215,7 @@ const App = () => {
       certSub: "Certifications (if any) will be shown here.",
       skillsTitle: "Technical Skills",
       projectTitle: "Featured Projects",
+      educationTitle: "Education",
       projectSub: "Examples of projects I built or contributed to.",
       contactTitle: "Ready to start your next project?",
       contactSub:
@@ -226,16 +228,16 @@ const App = () => {
 
       expData: [
         {
-          role: "Web Application Developer",
+          role: "Fullstack Developer",
           company: "PT. Innoark Servis Internasional",
           period: "September 2022 - Present",
-          desc: "Working on project-based requirements; designing optimization algorithms; writing clean,testable code (Ruby on Rails); participating in Agile development.",
+          desc: "Working on project-based requirements, providing technical solutions, participating in optimization algorithm design, implementing technical best practices, writing clean and testable code (Ruby on Rails). Maintaining applications and databases. Creating reports using C# & Pentaho. Participating in Agile cycles.",
         },
         {
-          role: "Software Engineer / Backend Developer",
+          role: "Software Engineer / Fullstack Developer",
           company: "PT. Sarana Bisnis Bersama (BeezzGroup)",
           period: "July 2021 - August 2022",
-          desc: "Built API services for BeezzGroup mobile app using Ruby on Rails; maintained backoffice; DB management; server maintenance on Digital Ocean.",
+          desc: "Building API service for BeezzGroup mobile application using Ruby on Rails and also maintenance and doing some enhancement in mobile application using React Native tech tools. Maintenance backoffice application (Web admin Marketplace built), database management (PostgreSQL and MongoDB (NoSQL)) deployment and server maintenance (Digital Ocean), version control in GitLab.",
         },
         {
           role: "Backend Developer",
@@ -499,7 +501,9 @@ const App = () => {
       {/* Education Section */}
       <section id="education" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Pendidikan</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            {t.educationTitle}
+          </h2>
           <div className="space-y-6">
             {t.education.map((edu, i) => (
               <div
