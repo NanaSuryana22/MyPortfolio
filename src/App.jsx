@@ -62,7 +62,7 @@ const App = () => {
     en: {
       nav: ['Home', 'About', 'Experience', 'Certifications', 'Projects', 'Skills', 'Contact'],
       navIds: ['home', 'about', 'experience', 'certifications', 'projects', 'skills', 'contact'],
-      heroBadge: "👋 Hi, I'm John Doe",
+      heroBadge: "👋 Hi, I'm Nana Suryana",
       heroTitle: 'Crafting Exceptional Digital <span class="text-indigo-600">Experiences</span>.',
       heroDesc: 'I am a Full-stack Developer focused on building clean, functional, and responsive user interfaces.',
       btnProject: 'View Projects',
