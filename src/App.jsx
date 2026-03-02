@@ -90,22 +90,22 @@ const App = () => {
           desc: "Membangun API service untuk aplikasi mobile BeezzGroup menggunakan Ruby on Rails dan juga maintenance dan melakukan beberapa enhancement di aplikasi mobile menggunakan tech tools React Native. Maintenance backoffice application (Web admin Marketplace yang dibangun), manajemen database (PostgreSQL dan MongoDB (NoSQL)) deployment dan pemeliharaan server (Digital Ocean), version control di GitLab.",
         },
         {
-          role: "Backend Developer",
+          role: "Fullstack Develop / Backend Developer / Web Developer",
           company: "PT Rahmat Loka Teknologi (DotERB Solution)",
           period: "Agustus 2019 - Juni 2021",
-          desc: "Mengimplementasikan backend/API dengan Ruby on Rails; bekerja bersama frontend React JS; menerapkan metode Scrum; penggunaan MongoDB sebagai storage; push per modul ke repo (Bitbucket/GitLab).",
+          desc: "Membangun beberapa project application web maupun API Service menggunakan Ruby On Rails sebagai backend, dan ReactJs sebagai Frontend, push project per module ke Repository Bitbucket maupun Gitlab, mengimplementasikan metode Scrum Agile dan Trello sebagai target per sprint nya, debugging test suatu feature / enhancement, & pemeliharaan database menggunakan MongoDB, PostgreSQL, SQL server untuk RDBMS.",
         },
         {
           role: "Web Developer",
           company: "PT Digital Amore Kriyase (DAK)",
           period: "Juni 2018 - Agustus 2019",
-          desc: "Membangun aplikasi koperasi simpan pinjam menggunakan CodeIgniter; manajemen database PostgreSQL; debugging modul dan deployment.",
+          desc: "Membangun aplikasi koperasi simpan pinjam menggunakan CodeIgniter dan Laravel, manajemen database menggunakan PostgreSQL, fixed bug untuk pengembangan aplikasi, dan ikut serta dalam siklus Scrum Agile.",
         },
         {
           role: "Oracle Application Apex Developer",
-          company: "PT. GIT",
+          company: "PT. Global Integrated Technologies (GIT)",
           period: "Juli 2017 - Juni 2018",
-          desc: "Membangun aplikasi menggunakan Oracle Application Express (Apex); desain form, chart, login; maintenance dan laporan.",
+          desc: "Membuat aplikasi ERP seperti Point of Sale (POS), Human Resources Application System, Accounting System,  Inventory Management System, Cash & Bank Information System, Payroll, menggunakan tech tools Oracle Application Apex (Semacam Wordpress tools) , maintenance aplikasi jika ada bug / error, membuat report untuk aplikasi yang sudah dibuat sesuai requirement, dan management database menggunakan Oracle.",
         },
       ],
 
@@ -117,8 +117,8 @@ const App = () => {
         {
           degree: "S1 - Teknik Informatika",
           school: "Perguruan Tinggi Indonesia Mandiri (STMIK-IM)",
-          period: "2018 - Februari 2021",
-          note: "Lulus berijazah, IPK 3.68",
+          period: "2018 - 2021",
+          note: "IPK 3.68",
         },
         {
           degree: "SMK - Rekayasa Perangkat Lunak",
@@ -242,10 +242,22 @@ const App = () => {
           desc: "Building API service for BeezzGroup mobile application using Ruby on Rails and also maintenance and doing some enhancement in mobile application using React Native tech tools. Maintenance backoffice application (Web admin Marketplace built), database management (PostgreSQL and MongoDB (NoSQL)) deployment and server maintenance (Digital Ocean), version control in GitLab.",
         },
         {
-          role: "Backend Developer",
+          role: "Fullstack Develop / Backend Developer / Web Developer",
           company: "PT Rahmat Loka Teknologi (DotERB Solution)",
           period: "August 2019 - June 2021",
-          desc: "Implemented backend/API with Ruby on Rails; worked with React JS frontend; used Scrum; MongoDB for storage.",
+          desc: "Building several web application projects and API Services using Ruby On Rails as the backend, and ReactJs as the Frontend, pushing projects per module to the Bitbucket and Gitlab Repositories, implementing the Scrum Agile and Trello methods as targets per sprint, debugging tests for a feature / enhancement, & database maintenance using MongoDB, PostgreSQL, SQL server for RDBMS.",
+        },
+        {
+          role: "Web Developer",
+          company: "PT Digital Amore Kriyase (DAK)",
+          period: "June 2018 - August 2019",
+          desc: "Building a savings and loan cooperative application using CodeIgniter and Laravel, database management using PostgreSQL, fixed bugs for application development, and participated in the Agile Scrum cycle.",
+        },
+        {
+          role: "Oracle Application Apex Developer",
+          company: "PT. Global Integrated Technologies (GIT)",
+          period: "July 2017 - June 2018",
+          desc: "Creating ERP applications such as Point of Sale (POS), Human Resources Application System, Accounting System, Inventory Management System, Cash & Bank Information System, Payroll, using Oracle Application Apex tech tools (a kind of Wordpress tools), application maintenance if there are bugs / errors, creating reports for applications that have been created according to requirements, and database management using Oracle.",
         },
       ],
 
@@ -255,8 +267,14 @@ const App = () => {
         {
           degree: "B.Sc. Computer Science",
           school: "Perguruan Tinggi Indonesia Mandiri (STMIK-IM)",
-          period: "2018 - Feb 2021",
+          period: "2018 - 2021",
           note: "GPA 3.68",
+        },
+        {
+          degree: "Major Software Engineering (RPL)",
+          school: "Vocational High School Nusantara Raya",
+          period: "2011 - 2014",
+          note: "",
         },
       ],
 
