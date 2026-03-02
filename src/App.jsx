@@ -17,6 +17,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import foto from "./assets/foto-portfolio.jpeg";
+import fotoAboutMe1 from "./assets/foto-formal.jpeg";
+import fotoAboutMe2 from "./assets/foto-nana-suryana-02.jpeg";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -454,12 +456,12 @@ const App = () => {
             </div>
             <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop"
+                src={fotoAboutMe1}
                 className="rounded-2xl shadow-lg"
                 alt="Dev"
               />
               <img
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=400&fit=crop"
+                src={fotoAboutMe2}
                 className="rounded-2xl shadow-lg mt-8"
                 alt="Code"
               />
