@@ -18,11 +18,11 @@ import {
   MessageCircle,
   MessageSquare,
   PhoneCall,
-  Sparkles,      // Tambahkan ini (untuk AI Chat)
-  Loader2,       // Tambahkan ini (untuk Loading)
+  Sparkles, // Tambahkan ini (untuk AI Chat)
+  Loader2, // Tambahkan ini (untuk Loading)
   Maximize2,
   FileText,
-  Download
+  Download,
 } from "lucide-react";
 import foto from "./assets/foto-portfolio.jpeg";
 import fotoAboutMe1 from "./assets/foto-formal.jpeg";
@@ -51,9 +51,13 @@ const App = () => {
   const [formData, setFormData] = useState({ name: "", message: "" });
   const [selectedImage, setSelectedImage] = useState(null);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [chatInput, setChatInput] = useState('');
+  const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState([
-    { role: 'assistant', content: 'Halo! Saya asisten AI Nana. Ada yang bisa saya bantu terkait proyek web development atau ide kolaborasi?' }
+    {
+      role: "assistant",
+      content:
+        "Halo! Saya asisten AI Nana. Ada yang bisa saya bantu terkait proyek web development atau ide kolaborasi?",
+    },
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -61,29 +65,70 @@ const App = () => {
   const certificates = [
     { id: 1, url: CertskillHTML, title: "Certificate 1 - HTML Skill" },
     { id: 2, url: CertskillLaravel, title: "Certificate 2 - Laravel Bootcamp" },
-    { id: 3, url: CertskillLaravel02, title: "Certificate 3 - Laravel Certificate" },
+    {
+      id: 3,
+      url: CertskillLaravel02,
+      title: "Certificate 3 - Laravel Certificate",
+    },
     { id: 4, url: Certskillphp, title: "Certificate 4 - PHP Certificate" },
     { id: 5, url: CertskillSQL, title: "Certificate 5 - SQL Certificate" },
-    { id: 6, url: CertWebinarBecomeAGoodFrontend, title: "Certificate 6 - Webinar Become A Good Frontend" },
-    { id: 7, url: CertWebinarBusiness_Dev, title: "Certificate 7 - Webinar Business Development" },
-    { id: 8, url: CertWebinarDigitalEra, title: "Certificate 8 - Webinar Digital Era" },
-    { id: 9, url: Certskill_Graduated_MajorSMK, title: "Certificate 9 - Lulus Uji Kompetensi Kejuruan" },
+    {
+      id: 6,
+      url: CertWebinarBecomeAGoodFrontend,
+      title: "Certificate 6 - Webinar Become A Good Frontend",
+    },
+    {
+      id: 7,
+      url: CertWebinarBusiness_Dev,
+      title: "Certificate 7 - Webinar Business Development",
+    },
+    {
+      id: 8,
+      url: CertWebinarDigitalEra,
+      title: "Certificate 8 - Webinar Digital Era",
+    },
+    {
+      id: 9,
+      url: Certskill_Graduated_MajorSMK,
+      title: "Certificate 9 - Lulus Uji Kompetensi Kejuruan",
+    },
   ];
 
   const displayCertificates = [...certificates, ...certificates];
 
   const content = {
     id: {
-      nav: ["Beranda", "Tentang", "Pengalaman", "Pendidikan", "Keahlian", "Sertifikat", "Kontak"],
-      navIds: ["home", "about", "experience", "education", "skills", "certs", "contact"],
+      nav: [
+        "Beranda",
+        "Tentang",
+        "Pengalaman",
+        "Pendidikan",
+        "Keahlian",
+        "Sertifikat",
+        "Kontak",
+      ],
+      navIds: [
+        "home",
+        "about",
+        "experience",
+        "education",
+        "skills",
+        "certs",
+        "contact",
+      ],
       heroBadge: "👋 Halo, Saya Nana Suryana, S.T",
-      heroTitle: 'Membangun <span class="text-indigo-600">Solusi Digital</span> yang Andal.',
-      heroDesc: "Software Engineer / Full Stack Developer berpengalaman membangun backend maupun frontend & web application dengan fokus pada kualitas, performa, dan maintainability.",
+      heroTitle:
+        'Membangun <span class="text-indigo-600">Solusi Digital</span> yang Andal.',
+      heroDesc:
+        "Software Engineer / Full Stack Developer berpengalaman membangun backend maupun frontend & web application dengan fokus pada kualitas, performa, dan maintainability.",
       btnProject: "Lihat Proyek",
+      btnSkill: "Lihat Skill & Keahlian",
       btnContact: "Hubungi Saya",
       aboutTitle: "Tentang Saya",
-      aboutP1: "Saya adalah Software Engineer dengan passion di bidang teknologi dan pemecahan masalah. Menguasai pengembangan backend dan web application dengan pengalaman menggunakan Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, dan Angular), & MobileApps (React Native & Flutter) serta berbagai tool pengembangan.",
-      aboutP2: "Berpengalaman bekerja dalam tim Agile, membangun API, maintenance sistem, dan mengimplementasikan solusi optimisasi sesuai kebutuhan bisnis.",
+      aboutP1:
+        "Saya adalah Software Engineer dengan passion di bidang teknologi dan pemecahan masalah. Menguasai pengembangan backend dan web application dengan pengalaman menggunakan Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, dan Angular), & MobileApps (React Native & Flutter) serta berbagai tool pengembangan.",
+      aboutP2:
+        "Berpengalaman bekerja dalam tim Agile, membangun API, maintenance sistem, dan mengimplementasikan solusi optimisasi sesuai kebutuhan bisnis.",
       btnDownloadCV: "Unduh CV (PDF)",
       btnDownloadPorto: "Unduh Portofolio (PDF)",
       expTitle: "Pengalaman Kerja",
@@ -98,13 +143,14 @@ const App = () => {
       educationTitle: "Pendidikan",
       projectSub: "Contoh proyek yang pernah saya bangun atau kontribusikan.",
       contactTitle: "Siap untuk memulai proyek selanjutnya?",
-      contactSub: "Saya selalu terbuka untuk diskusi mengenai proyek, konsultasi, atau peluang kerja sama.",
+      contactSub:
+        "Saya selalu terbuka untuk diskusi mengenai proyek, konsultasi, atau peluang kerja sama.",
       formName: "Nama Lengkap",
       formMsg: "Pesan Anda",
       formBtn: "Kirim ke WhatsApp",
-      footerDesc: "Dibuat dengan ❤️ — Nana Suryana",
+      footerDesc: "Dibuat dengan React, Tailwind, & Lucide — Nana Suryana",
       viewCert: "Lihat Sertifikat",
-      
+
       expData: [
         {
           role: "Fullstack Developer",
@@ -142,14 +188,14 @@ const App = () => {
           title: "Sertifikat Kompetensi - Software Development",
           issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
           date: "2021",
-          img: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500&q=80"
+          img: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500&q=80",
         },
         {
           title: "Full Stack Web Development",
           issuer: "Certification Authority",
           date: "2020",
-          img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=500&q=80"
-        }
+          img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=500&q=80",
+        },
       ],
       education: [
         {
@@ -170,14 +216,67 @@ const App = () => {
           subtitle: "Fazcode - OKGLOW",
           desc: "Membangun website klinik OkGlow menggunakan framework Laravel. (2021).",
           tags: ["Laravel", "PHP", "MySQL"],
-          demo: "http://okglow.herokuapp.com/"
+          demo: "http://okglow.herokuapp.com/",
         },
       ],
       skillsList: {
-        languages: ["PHP", "Ruby", "Golang", "Java", ".Net", "C", "C++", "C#", "Pascal", "Javascript", "Typescript", "HTML", "CSS"],
-        frameworks: ["Ruby on Rails", "Laravel", "CodeIgniter", "Gin - Gonic", "GORM", "YII", "React JS", "Vue JS", "Angular", "React Native", "Next.JS", "Bootstrap", "JQuery", "Tailwind CSS", "Xpress.js", "Node.js"],
-        databases: ["MySQL", "PostgreSQL", "Oracle", "MongoDB", "SQL Server", "Oracle", "Redis", "RabbitMQ"],
-        tools: ["Docker", "Pentaho Report Designer", "Oracle Application Apex", "Wordpress", "Pentaho Data Integration", "Figma", "Android Studio", "Visual Studio", "Postman", "Pentaho", "Version Control System (VCS) - Github, Gitlab, Bitbucket", "Scrum Agile"],
+        languages: [
+          "PHP",
+          "Ruby",
+          "Golang",
+          "Java",
+          ".Net",
+          "C",
+          "C++",
+          "C#",
+          "Pascal",
+          "Javascript",
+          "Typescript",
+          "HTML",
+          "CSS",
+        ],
+        frameworks: [
+          "Ruby on Rails",
+          "Laravel",
+          "CodeIgniter",
+          "Gin - Gonic",
+          "GORM",
+          "YII",
+          "React JS",
+          "Vue JS",
+          "Angular",
+          "React Native",
+          "Next.JS",
+          "Bootstrap",
+          "JQuery",
+          "Tailwind CSS",
+          "Xpress.js",
+          "Node.js",
+        ],
+        databases: [
+          "MySQL",
+          "PostgreSQL",
+          "Oracle",
+          "MongoDB",
+          "SQL Server",
+          "Oracle",
+          "Redis",
+          "RabbitMQ",
+        ],
+        tools: [
+          "Docker",
+          "Pentaho Report Designer",
+          "Oracle Application Apex",
+          "Wordpress",
+          "Pentaho Data Integration",
+          "Figma",
+          "Android Studio",
+          "Visual Studio",
+          "Postman",
+          "Pentaho",
+          "Version Control System (VCS) - Github, Gitlab, Bitbucket",
+          "Scrum Agile",
+        ],
       },
       contact: {
         phone: "089677705979", // Format murni angka untuk WA
@@ -188,16 +287,37 @@ const App = () => {
       },
     },
     en: {
-      nav: ["Home", "About", "Experience", "Education", "Skills", "Certificates", "Contact"],
-      navIds: ["home", "about", "experience", "education", "skills", "certs", "contact"],
+      nav: [
+        "Home",
+        "About",
+        "Experience",
+        "Education",
+        "Skills",
+        "Certificates",
+        "Contact",
+      ],
+      navIds: [
+        "home",
+        "about",
+        "experience",
+        "education",
+        "skills",
+        "certs",
+        "contact",
+      ],
       heroBadge: "👋 Hi, I'm Nana Suryana, S.T",
-      heroTitle: 'Building Reliable <span class="text-indigo-600">Digital Solutions</span>.',
-      heroDesc: "Software Engineer / Full Stack Developer experienced in building backend and frontend & web applications with a focus on quality, performance, and maintainability.",
+      heroTitle:
+        'Building Reliable <span class="text-indigo-600">Digital Solutions</span>.',
+      heroDesc:
+        "Software Engineer / Full Stack Developer experienced in building backend and frontend & web applications with a focus on quality, performance, and maintainability.",
       btnProject: "View Projects",
       btnContact: "Contact Me",
+      btnSkill: "View Skills & Expertise",
       aboutTitle: "About Me",
-      aboutP1: "I am a Software Engineer with a passion for technology and problem-solving. I have expertise in backend and web application development, with experience using Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, and Angular), and mobile apps (React Native & Flutter).",
-      aboutP2: "Experienced working in Agile teams, building APIs, maintaining systems, and implementing optimization solutions based on business needs.",
+      aboutP1:
+        "I am a Software Engineer with a passion for technology and problem-solving. I have expertise in backend and web application development, with experience using Ruby on Rails, PHP (Laravel/CodeIgniter), frontend (ReactJS, VueJS, and Angular), and mobile apps (React Native & Flutter).",
+      aboutP2:
+        "Experienced working in Agile teams, building APIs, maintaining systems, and implementing optimization solutions based on business needs.",
       btnDownloadCV: "Download CV (PDF)",
       btnDownloadPorto: "Download Portfolio (PDF)",
       expTitle: "Work Experience",
@@ -212,13 +332,14 @@ const App = () => {
       educationTitle: "Education",
       projectSub: "Examples of projects I built or contributed to.",
       contactTitle: "Ready to start your next project?",
-      contactSub: "I am open to project discussions, consulting, or collaboration opportunities.",
+      contactSub:
+        "I am open to project discussions, consulting, or collaboration opportunities.",
       formName: "Full Name",
       formMsg: "Your Message",
       formBtn: "Send to WhatsApp",
-      footerDesc: "Built with ❤️ — Nana Suryana",
+      footerDesc: "Built with React, Tailwind, & Lucide — Nana Suryana",
       viewCert: "View Certificate",
-      
+
       expData: [
         {
           role: "Fullstack Developer",
@@ -256,14 +377,14 @@ const App = () => {
           title: "Competency Certificate - Software Development",
           issuer: "National Professional Certification Agency (BNSP)",
           date: "2021",
-          img: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500&q=80"
+          img: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500&q=80",
         },
         {
           title: "Full Stack Web Development",
           issuer: "Certification Authority",
           date: "2020",
-          img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=500&q=80"
-        }
+          img: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=500&q=80",
+        },
       ],
       education: [
         {
@@ -284,14 +405,67 @@ const App = () => {
           subtitle: "Fazcode - OKGLOW",
           desc: "Built OkGlow clinic website using Laravel. (2021).",
           tags: ["Laravel", "PHP", "MySQL"],
-          demo: "http://okglow.herokuapp.com/"
+          demo: "http://okglow.herokuapp.com/",
         },
       ],
       skillsList: {
-        languages: ["PHP", "Ruby", "Golang", "Java", ".Net", "C", "C++", "C#", "Pascal", "Javascript", "Typescript", "HTML", "CSS"],
-        frameworks: ["Ruby on Rails", "Laravel", "CodeIgniter", "Gin - Gonic", "GORM", "YII", "React JS", "Vue JS", "Angular", "React Native", "Next.JS", "Bootstrap", "JQuery", "Tailwind CSS", "Xpress.js", "Node.js"],
-        databases: ["MySQL", "PostgreSQL", "Oracle", "MongoDB", "SQL Server", "Oracle", "Redis", "RabbitMQ"],
-        tools: ["Docker", "Pentaho Report Designer", "Oracle Application Apex", "Wordpress", "Pentaho Data Integration", "Figma", "Android Studio", "Visual Studio", "Postman", "Pentaho", "Version Control System (VCS) - Github, Gitlab, Bitbucket", "Scrum Agile"],
+        languages: [
+          "PHP",
+          "Ruby",
+          "Golang",
+          "Java",
+          ".Net",
+          "C",
+          "C++",
+          "C#",
+          "Pascal",
+          "Javascript",
+          "Typescript",
+          "HTML",
+          "CSS",
+        ],
+        frameworks: [
+          "Ruby on Rails",
+          "Laravel",
+          "CodeIgniter",
+          "Gin - Gonic",
+          "GORM",
+          "YII",
+          "React JS",
+          "Vue JS",
+          "Angular",
+          "React Native",
+          "Next.JS",
+          "Bootstrap",
+          "JQuery",
+          "Tailwind CSS",
+          "Xpress.js",
+          "Node.js",
+        ],
+        databases: [
+          "MySQL",
+          "PostgreSQL",
+          "Oracle",
+          "MongoDB",
+          "SQL Server",
+          "Oracle",
+          "Redis",
+          "RabbitMQ",
+        ],
+        tools: [
+          "Docker",
+          "Pentaho Report Designer",
+          "Oracle Application Apex",
+          "Wordpress",
+          "Pentaho Data Integration",
+          "Figma",
+          "Android Studio",
+          "Visual Studio",
+          "Postman",
+          "Pentaho",
+          "Version Control System (VCS) - Github, Gitlab, Bitbucket",
+          "Scrum Agile",
+        ],
       },
       contact: {
         phone: "089677705979",
@@ -332,7 +506,7 @@ const App = () => {
 
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
-    const phone = t.contact.phone;
+    const phone = "6289677705979";
     const text = `Halo Nana, saya ${formData.name}. %0A%0A${formData.message}`;
     window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
   };
@@ -346,8 +520,12 @@ const App = () => {
             <Globe size={40} />
           </div>
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-slate-900">Pilih Bahasa / Select Language</h1>
-            <p className="text-slate-500">Selamat datang di Portofolio Nana Suryana</p>
+            <h1 className="text-2xl font-bold text-slate-900">
+              Pilih Bahasa / Select Language
+            </h1>
+            <p className="text-slate-500">
+              Selamat datang di Portofolio Nana Suryana
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <button
@@ -409,7 +587,10 @@ const App = () => {
             >
               {lang}
             </button>
-            <button className="p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button
+              className="p-2 text-slate-600"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -431,7 +612,10 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-20">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center pt-20"
+      >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold">
@@ -446,10 +630,10 @@ const App = () => {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <button
-                onClick={() => scrollTo("projects")}
+                onClick={() => scrollTo("skills")}
                 className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
               >
-                {t.btnProject}
+                {t.btnSkill}
               </button>
               <button
                 onClick={() => scrollTo("contact")}
@@ -481,21 +665,43 @@ const App = () => {
               </div>
               {/* PDF Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-slate-100 mt-8">
-                <a href={cvPdf} download="CV_Nana_Suryana.pdf" className="flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg group">
-                  <FileText size={18} className="group-hover:scale-110 transition-transform" />
-                    {t.btnDownloadCV}
-                    <Download size={16} className="ml-1 opacity-60" />
+                <a
+                  href={cvPdf}
+                  download="CV_Nana_Suryana.pdf"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg group"
+                >
+                  <FileText
+                    size={18}
+                    className="group-hover:scale-110 transition-transform"
+                  />
+                  {t.btnDownloadCV}
+                  <Download size={16} className="ml-1 opacity-60" />
                 </a>
-                <a href={portoPdf} download="Portfolio_Nana_Suryana.pdf" className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white border-2 border-slate-100 text-slate-900 rounded-xl font-bold hover:border-indigo-600 hover:text-indigo-600 transition-all group">
-                  <Briefcase size={18} className="group-hover:scale-110 transition-transform" />
+                <a
+                  href={portoPdf}
+                  download="Portfolio_Nana_Suryana.pdf"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white border-2 border-slate-100 text-slate-900 rounded-xl font-bold hover:border-indigo-600 hover:text-indigo-600 transition-all group"
+                >
+                  <Briefcase
+                    size={18}
+                    className="group-hover:scale-110 transition-transform"
+                  />
                   {t.btnDownloadPorto}
                   <Download size={16} className="ml-1 opacity-60" />
                 </a>
               </div>
             </div>
             <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">
-              <img src={fotoAboutMe1} className="rounded-2xl shadow-lg" alt="Dev" />
-              <img src={fotoAboutMe2} className="rounded-2xl shadow-lg mt-8" alt="Code" />
+              <img
+                src={fotoAboutMe1}
+                className="rounded-2xl shadow-lg"
+                alt="Dev"
+              />
+              <img
+                src={fotoAboutMe2}
+                className="rounded-2xl shadow-lg mt-8"
+                alt="Code"
+              />
             </div>
           </div>
         </div>
@@ -534,18 +740,27 @@ const App = () => {
       {/* Education Section */}
       <section id="education" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">{t.educationTitle}</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            {t.educationTitle}
+          </h2>
           <div className="space-y-6">
             {t.education.map((edu, i) => (
-              <div key={i} className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              <div
+                key={i}
+                className="bg-slate-50 p-6 rounded-2xl border border-slate-100"
+              >
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="font-bold text-lg">{edu.degree}</h3>
-                    <div className="text-indigo-600 text-sm font-semibold">{edu.school}</div>
+                    <div className="text-indigo-600 text-sm font-semibold">
+                      {edu.school}
+                    </div>
                   </div>
                   <div className="text-sm text-slate-500">{edu.period}</div>
                 </div>
-                {edu.note && <p className="mt-3 text-slate-600 text-sm">{edu.note}</p>}
+                {edu.note && (
+                  <p className="mt-3 text-slate-600 text-sm">{edu.note}</p>
+                )}
               </div>
             ))}
           </div>
@@ -595,7 +810,12 @@ const App = () => {
               <h4 className="font-bold mb-3">{t.languageSkillTitle}</h4>
               <div className="flex flex-wrap gap-2">
                 {t.skillsList.languages.map((s) => (
-                  <span key={s} className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm">{s}</span>
+                  <span
+                    key={s}
+                    className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>
@@ -603,7 +823,12 @@ const App = () => {
               <h4 className="font-bold mb-3">{t.frameworkSkillsTitle}</h4>
               <div className="flex flex-wrap gap-2">
                 {t.skillsList.frameworks.map((s) => (
-                  <span key={s} className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm">{s}</span>
+                  <span
+                    key={s}
+                    className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>
@@ -611,7 +836,12 @@ const App = () => {
               <h4 className="font-bold mb-3">{t.databaseskillsTitle}</h4>
               <div className="flex flex-wrap gap-2">
                 {t.skillsList.databases.map((s) => (
-                  <span key={s} className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm">{s}</span>
+                  <span
+                    key={s}
+                    className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>
@@ -619,7 +849,12 @@ const App = () => {
               <h4 className="font-bold mb-3">{t.toolsSkillsTitle}</h4>
               <div className="flex flex-wrap gap-2">
                 {t.skillsList.tools.map((s) => (
-                  <span key={s} className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm">{s}</span>
+                  <span
+                    key={s}
+                    className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-sm"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>
@@ -628,36 +863,41 @@ const App = () => {
       </section>
 
       {/* --- CERTIFICATE MARQUEE SECTION --- */}
-      <section className="py-20 bg-white overflow-hidden border-y border-slate-100" id="certs">
+      <section
+        className="py-20 bg-white overflow-hidden border-y border-slate-100"
+        id="certs"
+      >
         <div className="max-w-6xl mx-auto px-6 mb-12">
           <h2 className="text-3xl font-bold mb-4 flex items-center justify-center italic">
-                <Award className="mr-3 text-indigo-600" /> {t.certTitle}
-              </h2>
-              <p className="text-center italic items-center">{t.certSub}</p>
+            <Award className="mr-3 text-indigo-600" /> {t.certTitle}
+          </h2>
+          <p className="text-center italic items-center">{t.certSub}</p>
         </div>
 
         <div className="relative flex overflow-hidden group">
           <div className="flex animate-marquee whitespace-nowrap py-4 gap-6 group-hover:pause-animation">
             {displayCertificates.map((cert, index) => (
-              <div 
+              <div
                 key={`${cert.id}-${index}`}
                 onClick={() => setSelectedImage(cert.url)}
                 className="relative w-72 h-48 md:w-96 md:h-64 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group/item"
               >
-                <img 
-                  src={cert.url} 
+                <img
+                  src={cert.url}
                   alt={cert.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-blue-900/40 opacity-0 group-hover/item:opacity-100 transition-opacity flex items-center justify-center">
-                   <Maximize2 className="text-white" size={32} />
+                  <Maximize2 className="text-white" size={32} />
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -670,7 +910,9 @@ const App = () => {
           .pause-animation {
             animation-play-state: paused;
           }
-        `}} />
+        `,
+          }}
+        />
       </section>
 
       {/* Contact Section */}
@@ -678,21 +920,33 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-indigo-600 rounded-[3rem] p-8 md:p-16 text-white flex flex-col md:flex-row gap-12 items-center">
             <div className="md:w-1/2 space-y-6">
-              <h2 className="text-4xl font-bold leading-tight">{t.contactTitle}</h2>
+              <h2 className="text-4xl font-bold leading-tight">
+                {t.contactTitle}
+              </h2>
               <p className="text-indigo-100 text-lg">{t.contactSub}</p>
               <div className="space-y-3 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center"><Mail size={18} /></div>
+                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                    <Mail size={18} />
+                  </div>
                   <span>
-                    <a href={`mailto:${t.contact.email}`} className="flex items-center text-lg">
+                    <a
+                      href={`mailto:${t.contact.email}`}
+                      className="flex items-center text-lg"
+                    >
                       {t.contact.email}
                     </a>
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center"><PhoneCall size={18} /></div>
+                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                    <PhoneCall size={18} />
+                  </div>
                   <span>
-                    <a href={`tel:${t.contact.phone}`} className="flex items-center text-lg">
+                    <a
+                      href={`tel:${t.contact.phone}`}
+                      className="flex items-center text-lg"
+                    >
                       {t.contact.phone}
                     </a>
                   </span>
@@ -705,29 +959,44 @@ const App = () => {
                 onSubmit={handleWhatsAppSend}
               >
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-widest">{t.formName}</label>
+                  <label className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                    {t.formName}
+                  </label>
                   <input
                     required
                     type="text"
                     placeholder="Enter your name..."
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all placeholder:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-widest">{t.formMsg}</label>
+                  <label className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                    {t.formMsg}
+                  </label>
                   <textarea
                     required
                     rows="4"
                     placeholder="Write your message..."
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none resize-none transition-all placeholder:text-slate-300"
                   ></textarea>
                 </div>
-                <button type="submit" className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center group shadow-xl shadow-indigo-100">
-                  {t.formBtn} <Send size={20} className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <button
+                  type="submit"
+                  className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center group shadow-xl shadow-indigo-100"
+                >
+                  {t.formBtn}{" "}
+                  <Send
+                    size={20}
+                    className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                  />
                 </button>
               </form>
             </div>
@@ -738,36 +1007,50 @@ const App = () => {
       {/* Footer */}
       <footer className="py-12 border-t bg-white">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
-          <div className="text-xl font-bold bg-indigo-600 bg-clip-text text-transparent">NS.</div>
+          <div className="text-xl font-bold bg-indigo-600 bg-clip-text text-transparent">
+            NS.
+          </div>
           <div className="font-medium">{t.footerDesc}</div>
           <div className="flex space-x-6 font-bold">
-            <a href={t.contact.github} target="_blank" rel="noreferrer" className="hover:text-indigo-600 transition-colors">GitHub</a>
-            <a href={t.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-indigo-600 transition-colors">LinkedIn</a>
+            <a
+              href={t.contact.github}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-indigo-600 transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href={t.contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-indigo-600 transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </footer>
 
       {/* --- LIGHTBOX MODAL --- */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 p-4 md:p-12 animate-in fade-in duration-300"
           onClick={() => setSelectedImage(null)}
         >
-          <button 
+          <button
             className="absolute top-6 right-6 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
             onClick={() => setSelectedImage(null)}
           >
             <X size={32} />
           </button>
-          <img 
-            src={selectedImage} 
-            alt="Enlarged Certificate" 
+          <img
+            src={selectedImage}
+            alt="Enlarged Certificate"
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-in zoom-in duration-300"
           />
         </div>
       )}
-
-
     </div>
   );
 };
