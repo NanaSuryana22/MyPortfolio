@@ -459,6 +459,7 @@ const App = () => {
           "Wordpress",
           "Pentaho Data Integration",
           "Figma",
+          "Borland Delphi",
           "Android Studio",
           "Visual Studio",
           "Postman",
