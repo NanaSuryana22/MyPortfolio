@@ -27,7 +27,7 @@ import {
 import foto from "./assets/foto-portfolio.jpeg";
 import fotoAboutMe1 from "./assets/foto-formal.jpeg";
 import fotoAboutMe2 from "./assets/foto-nana-suryana-02.jpeg";
-import cvPdf from "./assets/Resume_Nana_Suryana.pdf";
+import cvPdf from "./assets/Resume_Nana_Suryana_Fullstack_Engineer.pdf";
 import portoPdf from "./assets/Portofolio.pdf";
 
 // Sertifikat file
